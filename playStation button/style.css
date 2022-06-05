@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: grey;
+    font-family: sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    background-color: #0070d1;
+    padding: 1rem 2.2rem;
+    border-radius: 25px;
+    position: relative;
+}
+
+a:hover::before{
+    border-radius: 40px;
+    content: '';
+    position: absolute;
+    width: 108%;
+    height: 120%;
+    top: 50%;
+    transform: translateY(-50% )translateX(-50%);
+    left: 50%;
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 3px solid rgb(40, 1, 146);
+}

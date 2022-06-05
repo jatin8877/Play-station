@@ -1,0 +1,770 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;scroll-behavior: smooth;
+}
+
+body{
+    scroll-behavior: smooth;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+}
+
+/* --------  button design ----------- */
+
+.btn-design{
+    text-decoration: none;
+    color: white;
+    background-color: #0070d1;
+    padding: .7rem 1.4rem;
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+    font-weight: 500;
+    letter-spacing: 1px;
+    width: max-content;
+}
+
+.btn-design:hover::before{
+    border-radius: 40px;
+    content: '';
+    position: absolute;
+    width: 107%;
+    height: 120%;
+    top: 50%;
+     left: 50%;
+    transform: translateY(-50% )translateX(-50%);
+   
+    background-color: transparent;
+    box-sizing: border-box;
+    border: 3px solid #0070d1; 
+}
+
+/* --- headings and paragraph------ */
+h2{
+    color: rgb(226, 226, 226);
+    font-weight: 300;
+    font-size: 2.6rem;
+    margin-top: 1rem;
+}
+p{
+    color: white;
+    max-width: 500px;
+    letter-spacing: 1px;
+    font-weight: 300;
+    margin: 1rem 0;
+}
+/* -----------  header --------- */
+.logo{
+    width: 3rem;
+}
+.wrapper{
+    width: 100%;
+    display: flex;
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    z-index: 2444;
+    padding: .2rem 1.5rem;
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.navigation ul{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navigation ul li{
+    list-style: none;
+    margin: .5rem;
+}
+
+.navigation a{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    font-weight: 500;
+}
+.navigation a:hover{
+    color: #0070d1;
+}
+.navigation a:hover ~ .fa-angle-down{
+    color: #0070d1;
+}
+
+.design img{
+    width: 100px;
+}
+
+.fa-angle-down{
+    color: rgb(92, 92, 92);
+    margin-left: 8px;
+    transform: translateY(2px);
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+#myPS{
+    color: #0070d1;
+}
+
+.sub-menu{
+  display: none;
+  position: absolute;
+  top: 100%;
+  width: 100vw;
+  left: 0px;
+  background-color: white;
+  box-shadow: 2px 20px 20px rgba(0, 0, 0, 0.556);
+}
+
+
+
+.sub-menu ul li a{
+    font-size: 14px;
+}
+.sub-menu ul li {
+   max-width: 100%;
+   display: flex;
+   justify-content: center;
+   transition: all .2s ease-out;
+}
+
+input{
+    display: none; 
+} 
+label{
+    cursor: pointer; 
+}
+
+#game:checked ~ .sub-menu , #Hardware:checked ~ .sub-menu , #services:checked ~ .sub-menu , #news:checked ~ .sub-menu , #shop:checked ~ .sub-menu , #support:checked ~ .sub-menu ,#my:checked ~ .sub-menu ,#myPstation:checked ~.sub-menu {
+    display: block;
+}
+#game:checked ~  .fa-angle-down ,#Hardware:checked ~ .fa-angle-down ,  #services:checked ~ .fa-angle-down , #news:checked ~ .fa-angle-down , #shop:checked ~ .fa-angle-down , #support:checked ~ .fa-angle-down  , #my:checked ~ .fa-angle-down ,#myPstation:checked ~ .fa-angle-down{
+    transform: rotateZ(180deg);
+    color: #0070d1;
+}
+
+/* -----------  button --------------- */
+.signIn-btn{
+    background-color: rgb(51, 51, 51);
+}
+.signIn-btn:hover{
+    background-color: rgb(70, 70, 70);
+}
+.signIn-btn:hover:before{
+    border-color: rgb(67, 67, 67);
+}
+
+.signIn-btn a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* ------------- sub links -------------- */
+
+.sub-menu-style img{
+width: 40px;
+margin-bottom: 1rem;
+}
+
+
+.sub-menu-style a{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 8rem;
+    padding: 1rem 0 .5rem 0;
+}
+.sub-menu-style:hover{
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+}
+
+.extra-nav{
+    display: none;
+}
+
+/* --------- hamburger ########### */
+.hamburger{
+    display: none;
+    font-size: 1.3rem;
+    color: rgb(24, 24, 24);
+    cursor: pointer;
+    padding: 1rem;
+    border: 1px solid #0070d1;
+    box-shadow: inset 0px 0px 10px #0070d1;
+}
+ @media screen and (max-width:900px) {
+    .navigation ul{
+       display: none;
+    }
+    .wrapper{
+        box-shadow:inset 0px -0px 10px rgba(0, 0, 0, 0.159);
+    }
+    .flex{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .extra-nav{
+        display: block;
+    }
+    .extra-nav-mobile  .navigation {
+        display: none;
+    }
+    .extra-nav-mobile{
+        display: flex;
+        justify-content: flex-end;
+    }
+    .hamburger{
+        display: block;
+        position: relative;
+    }
+    .navigation{
+        position: absolute;
+        width: 30%;
+        top: 100%;
+        left: 0;
+        background-color: #ffffff;
+        overflow: hidden;
+    }
+
+    .main-nav{
+        height: 0vh;
+        overflow: hidden;
+    }
+    .navigation ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        height: 100vh; 
+    }
+    .navigation ul li{  
+        margin-bottom: 2rem;
+         
+     } 
+    .fa-angle-down{
+        position: relative;
+    }
+    .sub-menu{
+        position: absolute;
+        width:100%;
+        height: 100%;
+        left: 100%;
+        top: 0;
+        box-shadow: none;
+    }
+    .sub-menu ul {
+        flex-wrap: wrap;
+        flex-direction: row;
+        align-content: flex-start;
+    }
+
+    .expand{
+        height: 100vh;
+        transition: all .5s ease;
+    }
+} 
+
+
+/* ----------- main ============= */
+
+
+.home-container{
+    position: relative;
+    overflow: hidden;
+    height: 112vh;
+    background-position: bottom;
+    background: url(./images/wp8962088-aloy-fortnite-wallpapers.jpg) center  center / cover fixed no-repeat;
+}
+
+.clr{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: linear-gradient(203deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.46) 100%);
+    
+}
+.home-text{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    height: 100%;
+    margin: 10rem 5rem;
+    z-index: 22;
+}
+
+.home-text h1{
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
+
+.home-text p{
+    margin-top: 1rem;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
+.play-btn{
+    background-color: #CD3D0F ;
+    margin-top: 1rem;
+    width: max-content;
+}
+
+ a{
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+   
+}
+.play-btn:hover:before {
+    border: 3px #CD3D0F solid;
+    width: 106%;
+
+}
+
+/* ---------- images introduction container--------- */
+.intro-container{
+    width: 80%;
+    margin: auto;
+    height: 70vh;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.intro-images{
+    flex-wrap: wrap;
+    /* overflow: auto; */
+    justify-content: center;
+}
+.intro-images img{
+    margin: .5rem;
+    max-width: 180px;
+    height: auto;
+    border-radius: 15px;
+    opacity: .7;
+    cursor: pointer;
+    
+}
+
+.intro-images img:hover{
+    opacity: 1;
+    transform: translateY(-10px);
+    transition: all .3s ease;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.4);
+}
+.intro-text h3{
+     color: #0070d1;
+     font-size: 13.5px;
+     text-transform: uppercase;
+     letter-spacing: 3px;
+     font-weight: 600;
+     margin-bottom: .3rem;
+}
+
+.intro-text h1{
+    color: rgb(29, 29, 29);
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-bottom: 1.2rem;
+}
+
+.intro-text p{
+    color: rgb(39, 39, 39);
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width:900px) {
+    .intro-container{
+        width: 90%;
+    }
+    .intro-text h3{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .intro-text h1{
+        font-size: 1.9rem;
+        letter-spacing: .2px;
+    }
+    .intro-text p{
+        font-size: 1rem;
+        max-width: 470px;
+    }
+    .intro-images{
+        margin: 3rem 0 2rem 0;
+    }
+}
+
+/* ######## products section ####  */
+
+.products-wrapper{
+    width: 70%;
+    margin: auto;
+}
+
+.products-text{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 310px;
+}
+.products-text a{
+    width: max-content;
+}
+.products-text h1{
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: rgb(38, 38, 38);
+}
+.products-text p{
+    font-size: 1.2rem;
+    color: grey;
+    line-height: 1.8rem;
+}
+
+.products-image img{
+    max-width: 480px;
+}
+
+.sub-products{
+    text-align: center;
+    align-items: baseline;
+    justify-content: space-around;
+    gap: 2rem;
+    margin: auto;
+}
+
+.sub-products p{
+    color: rgb(94, 94, 94);
+    margin-bottom: 2rem;
+    font-size: .95rem;
+    height: 2rem;
+    min-width: 170px;
+}
+
+.sub-products img{
+    width: 100px;
+    margin-bottom: 1rem;
+    opacity: .7;
+    transition: all .5s ease;
+}
+.sub-products div{
+    cursor: pointer;
+    position: relative;
+    width: 160px;
+}
+
+.sub-products a{
+    text-decoration: none;
+}
+.sub-products div:hover img{
+    opacity: 1;
+}
+.sub-products div::before{
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    height: 1%;
+    background-color: #0070d1;
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.sub-products div:hover::before{
+    opacity: 1;
+}
+
+.sub-products div:hover  p{
+    color: black;
+}
+
+@media screen and (max-width:980px) {
+    .main-product{
+        flex-direction: column-reverse;
+        margin-top: 3rem;
+    }
+    .main-product a{
+        margin-bottom: 2rem;
+    }
+    .sub-products{
+        flex-wrap: wrap;
+    }
+    .sub-products div{
+        max-width: 200px;
+    }
+}
+
+/* ------------------- farcry- section--------- */
+.farcry-container{
+    background: url(./images/farcry-6.jpeg) center center/ cover fixed;
+    height: 85vh;
+}
+.farcry-6{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin:2rem 4rem;
+}
+
+.farcry-img{
+    max-width: 30rem;
+}
+
+
+
+/* ---------- explore section ----------- */
+.explore-container{
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+.explore-container img{
+    height: 230px;
+    width: 330px;
+}
+
+.explore-container h2{
+    color: rgb(22, 22, 22);
+}
+.explore-container p{
+    color: rgb(63, 63, 63);
+}
+
+.explore div{
+    text-align: left;
+    flex-basis: 1rem;
+}
+
+@media screen and ( max-width:980px){
+    .explore-container{
+        margin: 2rem;
+    }
+    .explore{
+        flex-direction: column;
+
+    }
+    .explore-container h2{
+        font-size: 2rem;
+    }
+    .explore-container p{
+        font-size: 15px;
+        max-width: 395px;
+    }
+    .explore-container a{
+        font-size: 14px;
+    }
+    .explore-container img{
+        width: 250px;
+        height: 180px;
+        /* margin: 2rem 0 -2rem 0; */
+    }
+}
+
+/* ---------- playstation-plus section ----  */
+.playstation-plus-container{
+    background-color: #BEBCBB;
+}
+
+.playstation-plus-content{
+    padding: 1rem;
+}
+
+.playstation-plus-content img{
+    width: 17rem;
+}
+.playstation-plus-content p{
+    color: rgb(63, 63, 63);
+}
+
+.playstation-plus-image{
+    max-width: 30rem;
+}
+
+.playstation-plus-container .btn-design{
+    background-color: #D9DADC;
+}
+.playstation-plus-container .btn-design a{
+    color: #0070d1;
+}
+
+.playstation-plus-container .btn-design::before{
+    border-color: #d9dadc7b;
+    width: 103%;
+}
+
+/* ---- savings section----- */
+.savings-container{
+    flex-direction: column;
+}
+
+.savings-container h2{
+    color: rgb(22, 22, 22);
+    font-weight: 300;
+    margin: 3rem;
+    text-align: center;
+}
+
+.savings-container p{
+    color: rgb(63, 63, 63);
+    text-align: center;
+}
+
+.saving-images img{
+    max-width: 300px;
+    margin: 1rem;
+    cursor: pointer;
+}
+
+@media screen and ( max-width:980px){
+    .saving-images{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .saving-images img{
+        max-width: 450px;
+    }
+    .savings-container h2{
+        font-size: 2.2rem;
+    }
+}
+
+/* ------ social section---- */
+.social-container{
+    flex-direction: column;
+}
+
+.social-icons img{
+    max-width: 130px;
+    margin: 4rem 1rem; 
+    cursor: pointer;
+}
+
+.social-container h2{
+    color: rgb(22, 22, 22);
+    margin: 5rem 0 0 0;
+}
+
+@media screen and ( max-width:980px){
+    .social-container h2{
+        font-size: 1.8rem;
+    }
+    .social-icons{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .social-icons img{
+        margin: 1rem 1rem; 
+        cursor: pointer;
+    }
+}
+
+/* ----------  footer --------- */
+.footer-container{
+    background-color: #00439C;
+}
+
+.footer-first-section{
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 4rem;
+}
+
+.footer-first-section img{
+    max-width: 6.5rem;
+}
+
+.footer-navigation{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.footer-navigation ul{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 1rem;
+}
+.footer-navigation ul li a{
+    color: white;
+    font-size: .8rem;
+    font-weight: 400;
+}
+
+.footer-navigation ul li a:hover{
+    color: #90cbff;
+}
+
+.footer-navigation ul li{
+    list-style: none;
+    margin-bottom: 1rem;
+}
+
+.footer-second-section{
+    width: 70%;
+    margin: auto;
+}
+
+.footer-second-section img{
+    max-width: 9rem;
+}
+
+.footer-second-section p{
+    font-size: .8rem;
+    margin: 0;
+    line-height: 1.2rem;
+    font-weight: 400;
+}
+.footer-second-section span a{
+    text-decoration: underline;
+}
+
+.purpose{
+    padding:2rem 0 5rem;
+}
+
+@media screen and ( max-width:980px){
+    .footer-first-section{
+        flex-direction: column;
+        overflow: hidden;
+        padding: .5rem;
+    }  
+
+    .footer-navigation{
+        margin-top: 5rem;
+    }
+}
